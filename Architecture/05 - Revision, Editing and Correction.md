@@ -51,6 +51,28 @@
 └───────────────┘
 ```
 
+### 1.3. Интерфейсы и зависимости
+
+- **Выходные интерфейсы модуля**:
+    - `RevisedDocumentAPI`: Предоставляет доступ к отредактированному документу
+        - Методы: `getRevisedSegments()`, `getEditingHistory(segmentId)`, `getQualityMetrics()`
+        - Формат данных: Структура с отредактированными сегментами и метаданными правок
+    - `EditingInsightsAPI`: Предоставляет аналитику по редактированию
+        - Методы: `getCommonErrors()`, `getEditingStatistics()`, `getSuggestions()`
+- **Входные зависимости**:
+    - `TranslatedDocumentAPI`: Получение переведенных сегментов
+        - Требуемые методы: `getTranslatedSegments()`, `getSegmentById(id)`
+    - `TranslatedGlossaryAPI`: Доступ к утвержденному глоссарию для проверки терминологии
+        - Требуемые методы: `getApprovedTerms()`, `verifyTerminology(segment)`
+    - `StyleGuideAPI`: Получение стилистических правил и требований
+        - Требуемые методы: `getStyleRules()`, `getDomainSpecificRules(domainId)`
+    - `QualityAssuranceAPI`: Интерфейс для проверки качества
+        - Требуемые методы: `performQACheck(segment)`, `getSuggestions(segment)`
+- **Механизмы синхронизации**:
+    - Инкрементальная обработка с сохранением промежуточных результатов
+    - Система блокировок для предотвращения конфликтующих изменений
+    - Механизмы объединения изменений от разных редакторов
+
 ## 2. Этапы обработки
 
 ### 2.1. Подготовка и валидация входных данных

@@ -52,6 +52,28 @@
 └───────────────┘
 ```
 
+### 1.3. Интерфейсы и зависимости компонентов
+
+- **Выходные интерфейсы модуля**:
+    - `TranslatedDocumentAPI`: Предоставляет доступ к переведенным сегментам
+        - Методы: `getTranslatedSegments()`, `getSegmentById(id)`, `getTranslationMetadata(segmentId)`
+        - Формат данных: Структура с переведенными сегментами, их оценками и маркировкой
+    - `TranslationFeedbackAPI`: Интерфейс для получения обратной связи о качестве перевода
+        - Методы: `submitFeedback(segmentId, feedback)`, `getSegmentQualityScore(segmentId)`
+- **Входные зависимости**:
+    - `SegmentedDocumentAPI`: Получение сегментированного документа
+        - Требуемые методы: `getSegments()`, `getSegmentContext(segmentId)`
+    - `TranslatedGlossaryAPI`: Доступ к утвержденному глоссарию
+        - Требуемые методы: `getApprovedTerms()`, `getTermTranslation(termId)`
+    - `ProcessedUserResourcesAPI`: Доступ к памяти переводов и стилевым требованиям
+        - Требуемые методы: `getTM()`, `getStyleGuides()`, `getTranslationRequirements()`
+    - `TranslationEngineProvidersAPI`: Интерфейс к различным движкам перевода
+        - Требуемые методы: `translateSegment(segment, context, params)`, `rankTranslations(segment, translations)`
+- **Механизмы координации**:
+    - Распределенный планировщик задач для управления параллельной обработкой с помощью Celery
+    - Система приоритетов для критичных сегментов
+    - Механизм обратного давления (backpressure) для предотвращения перегрузки системы
+
 ## 2. Этапы обработки
 
 ### 2.1. Подготовка и валидация входных данных

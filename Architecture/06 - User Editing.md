@@ -55,6 +55,28 @@
 └───────────────┘
 ```
 
+### 1.3. Интерфейсы взаимодействия
+
+- **Выходные интерфейсы модуля**:
+    - `UserEditedDocumentAPI`: Предоставляет доступ к отредактированному пользователем документу
+        - Методы: `getFinalSegments()`, `getUserEdits(segmentId)`, `getCompletionStatus()`
+        - Формат данных: Финальные сегменты с метаданными пользовательских правок
+    - `FeedbackCollectionAPI`: Собирает обратную связь от пользователя
+        - Методы: `submitSegmentFeedback(segmentId, feedback)`, `submitGlossaryFeedback(termId, feedback)`
+- **Входные зависимости**:
+    - `RevisedDocumentAPI`: Получение отредактированного документа от системы
+        - Требуемые методы: `getRevisedSegments()`, `getEditingSuggestions(segmentId)`
+    - `TranslatedGlossaryAPI`: Доступ к глоссарию для редактирования
+        - Требуемые методы: `getApprovedTerms()`, `proposeTermUpdate(termId, newTranslation)`
+    - `ProcessedUserResourcesAPI`: Доступ к ресурсам пользователя
+        - Требуемые методы: `getTM()`, `updateTM(segment, translation)`, `updateGlossary(term, translation)`
+    - `QualityCheckAPI`: Интерфейс для проверки качества пользовательских правок
+        - Требуемые методы: `validateEdit(segmentId, editedText)`, `getSuggestions(text)`
+- **Механизмы коллаборации**:
+    - Real-time коллаборативное редактирование через Operational Transformation
+    - Система разрешения конфликтов при параллельном редактировании
+    - Механизмы комментирования и обсуждения для командной работы
+
 ## 2. Этапы обработки
 
 ### 2.1. Подготовка и загрузка данных из предыдущих блоков
