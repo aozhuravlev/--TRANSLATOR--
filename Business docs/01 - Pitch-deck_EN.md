@@ -4,7 +4,7 @@
 
 **Title:** Modular Machine Translation System for Specialized Texts
 
-**Key Value Proposition:** Reducing specialized translation costs by 40% while improving accuracy by 30%
+**Key Value Proposition:** Reducing specialized translation costs by 93-97% (14-33 times cheaper) while improving accuracy by 30%
 
 ---
 
@@ -95,6 +95,7 @@ graph TB
 - **Machine translation market: $800 million** (2024) with 18.9% annual growth
 - **Specialized translation segment: $280 million** (35% of the market)
 - **Target market share by 2026: 2%** of the specialized segment (~$6 million)
+- **Market volume forecast by 2026: $400+ million** (considering growth dynamics)
 
 **Competitive advantages:**
 
@@ -113,7 +114,7 @@ graph TB
 
 **Pricing plan:**
 
-- **Base rate:** $0.002 per translated word
+- **Base rate:** $0.003 per translated word
 - **Corporate rates:** discounts from 10% for volumes over 1 million words per month
 - **Included in the price:**
     - Automatic terminology extraction
@@ -122,22 +123,29 @@ graph TB
 
 **Unit Economics Analysis:**
 
-| Metric                        | Value                 | Notes                                          |
-| ----------------------------- | --------------------- | ---------------------------------------------- |
-| **Average client**            | 2,000,000 words/month | Typical volume for a medium translation agency |
-| **Revenue per client**        | $4000/month           | At the base rate of $0.002/word                |
-| **Annual revenue per client** | $48,000               | ARR per average client                         |
-| **Variable costs**            | $0.0004/word          | 20% of the rate (computational resources)      |
-| **Gross margin**              | 80%                   | Percentage of profit after variable costs      |
-| **CAC**                       | $2,400                | Cost of acquiring one client                   |
-| **LTV**                       | $144,000              | With an average client lifetime of 3 years     |
-| **LTV/CAC**                   | 6.0                   | Target efficiency indicator >3                 |
+|Metric|Value|Notes|
+|---|---|---|
+|**Average client**|2,000,000 words/month|Typical volume for a medium translation agency|
+|**Revenue per client**|$6,000/month|At the base rate of $0.003/word|
+|**Annual revenue per client**|$72,000|ARR per average client|
+|**Variable costs**|$0.0006/word|20% of the rate (computational resources)|
+|**Gross margin**|80%|Percentage of profit after variable costs|
+|**CAC**|$2,400|Cost of acquiring one client|
+|**LTV**|$216,000|With an average client lifetime of 3 years|
+|**LTV/CAC**|9.0|Target efficiency indicator >3|
 
 **ROI calculation for the client:**
 
-- **Average cost of specialized translation:** $0.12-0.15/word
-- **Savings when using our solution:** 135-400%
-- **ROI for the client:** >400% in the first year
+- **Client currently pays for translation:** $0.04-0.1/word
+- **Our cost:** $0.003/word
+- **Savings:** 93-97% (14-33 times cheaper!)
+
+**With a volume of 2 million words/month:**
+
+- **Traditional translation:** $80,000-$200,000/month
+- **Our solution:** $6,000/month
+- **Savings:** $74,000-$194,000/month (93-97%)
+- **ROI:** 1,230-3,230% in the first year
 
 ---
 
@@ -170,18 +178,19 @@ graph TB
 |Indicator|Q2 2025 (MVP)|Q3-Q4 2025|Q1-Q2 2026|Q3-Q4 2026|
 |---|---|---|---|---|
 |**Volume of translated words**|10 million|50 million|150 million|300 million|
-|**Revenue**|$20,000|$100,000|$300,000|$600,000|
+|**Revenue**|$30,000|$150,000|$450,000|$900,000|
 |**Expenses**|$100,000|$150,000|$180,000|$220,000|
-|**Profit/Loss**|($80,000)|($50,000)|$120,000|$380,000|
+|**Profit/Loss**|($70,000)|$0|$270,000|$680,000|
 |**Clients (cumulative)**|5|15|30|50|
 
-**Breakeven point:** Q1 2026 (6-8 months after MVP launch)
+**Breakeven point:** Q3-Q4 2025 (4-6 months after MVP launch)
 
-**3x return in 18 months:**
+**Investment attractiveness:**
 
 - Initial investment: $300,000
-- Company valuation by Q4 2026: $900,000+ (3x)
-- Basis for valuation: annual revenue of $1.2 million with a multiplier of 2.5-3.0x
+- Annual revenue by Q4 2026: $1.8 million
+- Company valuation by Q4 2026: $4.5-5.4 million (15-18x return on initial investment)
+- Basis for valuation: annual revenue of $1.8 million with a multiplier of 2.5-3.0x
 
 ---
 
@@ -205,6 +214,11 @@ graph TB
     - Development of industry glossaries
     - Tools for automatic terminology extraction
 
+**Key risks and mitigation strategies:**
+
+- Risk: Emergence of new base translation models
+- Mitigation: Modular architecture allows for quick integration of new technologies while maintaining our advantage in domain specialization
+
 ### Roadmap
 
 ```mermaid
@@ -219,7 +233,7 @@ timeline
     section Q2 2026
         Profitability : Stable profitability (150+ million words/month)
     section Q4 2026
-        3x Return on investment : 300+ million words/month
+        x3 Return on investment : 300+ million words/month
 ```
 
 **Key milestones:**
